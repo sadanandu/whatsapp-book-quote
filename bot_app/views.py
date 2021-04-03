@@ -7,7 +7,9 @@ import csv
 import time
 import os
 
-with open('bot_app/goodreads_health.csv', 'r') as f:
+curdir = os.path.dirname(__file__)
+
+with open(os.apth.join(curdir,'goodreads_health.csv'), 'r') as f:
     reader = csv.reader(f)
     index = 0
     health_dict = {}
@@ -16,7 +18,7 @@ with open('bot_app/goodreads_health.csv', 'r') as f:
         index += 1
     health_quotes = index+1
 
-with open('bot_app/goodreads_life.csv', 'r') as f:
+with open(os.apth.join(curdir,'goodreads_life.csv'), 'r') as f:
     reader = csv.reader(f)
     index = 0
     life_dict = {}
@@ -25,7 +27,7 @@ with open('bot_app/goodreads_life.csv', 'r') as f:
         index += 1
     life_quotes = index + 1
 
-with open('bot_app/goodreads_wealth.csv', 'r') as f:
+with open(os.apth.join(curdir,'goodreads_wealth.csv'), 'r') as f:
     reader = csv.reader(f)
     index = 0
     wealth_dict = {}
