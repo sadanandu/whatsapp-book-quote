@@ -41,8 +41,8 @@ with open(os.path.join(curdir,'goodreads_wealth.csv'), 'r') as f:
 def get_quote():
     if request.method == 'POST':
         # retrieve incoming message from POST request in lowercase
-        incoming_msg = request.POST['Body'].lower()
-        came_from = request.POST['WaId']
+        incoming_msg = request.form.get('Body').lower()
+        came_from = request.form.get('WaId')
         # create Twilio XML response
         resp = MessagingResponse()
         msg = resp.message()
