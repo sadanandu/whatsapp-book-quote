@@ -37,7 +37,7 @@ with open(os.path.join(curdir,'goodreads_wealth.csv'), 'r') as f:
         index += 1
     wealth_quotes = index + 1
 
-@app.route('/bot/', methods=["GET", "POST"])
+@app.route('/', methods=["GET", "POST"])
 def get_quote():
     if request.method == 'POST':
         # retrieve incoming message from POST request in lowercase
@@ -83,5 +83,3 @@ def get_quote(category_dict, category_count, came_from):
     quote_row = category_dict[random.randrange(0, category_count-1)]
 
     return emoji.emojize(quote_row[0] + '\n' + ' - *{0}*, *{1}*'.format(quote_row[1], quote_row[2]))
-
-
